@@ -45,6 +45,8 @@ VOLUME /data /logs
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+CHMOD 777 /docker-entrypoint.sh
+
 EXPOSE 7474 7473 7687
 
 ENTRYPOINT ["/sbin/tini", "-g", "--", "/docker-entrypoint.sh"]
